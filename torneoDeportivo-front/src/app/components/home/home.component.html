@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+
+<div class="html-responsive" style="height: 100%;">
+    <div class="body-content" style="height: 100%;">
+        <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+            <div class="w3-display-middle">
+                <h1 class="w3-jumbo w3-animate-top">Ligas deportivas</h1>
+                <hr class="w3-border-green" style="margin: auto; width: 40%;">
+                <p class="w3-large w3-center pt-2" *ngIf="!token">
+                    <button routerLink="/login" type="button" class="btn btn-lg btn-outline-light me-2" style="width: 150px;">Inicia sesión</button>
+                    <button routerLink="/register" type="button" class="btn btn-lg btn-outline-light" style="width: 150px;">Registrate</button>
+                </p>
+                <p class="w3-large w3-center pt-2" *ngIf="token && role == 'ADMIN'">
+                    <button routerLink="/admin/users" type="button" class="btn btn-lg btn-outline-light me-2" style="width: 150px;">Administrar usuarios</button>
+                    <button routerLink="/admin/leagues" type="button" class="btn btn-lg btn-outline-light" style="width: 150px;">Administrar ligas</button>
+                </p>
+                <p class="w3-large w3-center pt-2" *ngIf="token && role == 'CLIENT'">
+                    <button routerLink="/leagues" type="button" class="btn btn-lg btn-outline-light me-2" style="width: 150px;">Mis ligas</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

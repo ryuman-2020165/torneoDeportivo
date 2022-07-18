@@ -1,0 +1,120 @@
+<app-navbar></app-navbar>
+
+<div class="text-center m-3">
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAddUser">Agregar usuario</button>
+    <!-- <div class="input-group mx-auto w-25 mt-2 ">
+        <input [(ngModel)]="search" type="text" class="form-control" placeholder="Buscar producto" aria-describedby="btnSearch">
+    </div> -->
+</div>
+<hr>
+<div class="row justify-content-center px-4">
+    <div *ngFor="let user of users" class="card m-2" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ user.name }}</h5>
+            <p class="card-subtitle mb-2 text-muted fst-italic">{{ user._id }}</p>
+            <p class="card-subtitle mb-2"> Nombres: {{ user.name }} </p>
+            <p class="card-subtitle mb-2"> Apellidos: {{ user.surname }} </p>
+            <p class="card-subtitle mb-2"> Nombre de usuario: {{ user.username }} </p>
+            <p class="card-subtitle mb-2"> Correo: {{ user.email }} </p>
+            <p class="card-subtitle mb-2"> Rol: {{ user.role }} </p>
+            <div *ngIf="user.role === 'CLIENT'" class="btn-group d-flex" role="group">
+                <button (click)="getUserAdmin(user._id)" class="btn btn-warning flex-grow-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasGetUser" aria-controls="offcanvasGetUser">Editar</button>
+                <button (click)="deleteUserAdmin(user._id)" class="btn btn-danger">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal add user-->
+<div class="modal fade" id="modalAddUser" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Agregar usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form #addUserForm="ngForm">
+                    <div class="mb-3">
+                        <label class="form-label">Nombre</label>
+                        <input [(ngModel)]="user.name" name="name" type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Apellido</label>
+                        <input [(ngModel)]="user.surname" name="surname" type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Nombre de usuario</label>
+                        <input [(ngModel)]="user.username" name="username" type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Correo electrónico</label>
+                        <input [(ngModel)]="user.email" name="email" type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Contraseña</label>
+                        <input [(ngModel)]="user.password" name="password" type="password" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Teléfono</label>
+                        <input [(ngModel)]="user.phone" name="phone" type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Rol</label>
+                        <select [(ngModel)]="user.role" name="role" class="form-select">
+                            <option value="ADMIN">ADMIN</option>
+                            <option value="CLIENT">CLIENT</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Descartar cambios</button>
+                        <button type="submit" (click)="addUserAdmin(addUserForm)" class="btn btn-primary" data-bs-dismiss="modal">Agregar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Offcanvas get user-->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasGetUser" aria-labelledby="offcanvasGetUser">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasGetUser">Editar usuario</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <form (ngSubmit)="updateUserAdmin()" *ngIf="userGetId">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input [(ngModel)]="userGetId.name" name="name" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellido</label>
+                <input [(ngModel)]="userGetId.surname" name="surname" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nombre de usuario</label>
+                <input [(ngModel)]="userGetId.username" name="username" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Correo electrónico</label>
+                <input [(ngModel)]="userGetId.email" name="email" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Teléfono</label>
+                <input [(ngModel)]="userGetId.phone" name="phone" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Rol</label>
+                <select [(ngModel)]="userGetId.role" name="role" class="form-select">
+                    <option value="ADMIN">ADMIN</option>
+                    <option value="CLIENT">CLIENT</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="offcanvas">Descartar cambios</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="offcanvas">Actualizar cambios</button>
+            </div>
+        </form>
+    </div>
+</div>

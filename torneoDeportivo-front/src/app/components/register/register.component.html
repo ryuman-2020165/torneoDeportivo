@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+
+<div class="container pt-4">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card bg-dark text-white border border-5" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+                    <div class="md-5 pb-5">
+
+                        <h2 class="fw-bold mb-3">Registrarse</h2>
+
+                        <form #registerForm="ngForm" (ngSubmit)="register()">
+
+                            <span class="requiredData">
+                                    <p *ngIf="!name.valid && name.touched" class="text-start">Campo obligatorio</p>
+                            </span>
+
+                            <div class="input-group form-outline form-white mb-4">
+                                <input [(ngModel)]="user.name" #name="ngModel" name="name" class="form-control form-control" placeholder="Nombre" aria-label="Name" id="name" required>
+                                <input [(ngModel)]="user.surname" name="surname" class="form-control form-control" placeholder="Apellido" aria-label="Surname">
+                            </div>
+
+                            <span class="requiredData">
+                                <p *ngIf="!username.valid && username.touched" class="text-start">Campo obligatorio</p>
+                            </span>
+
+                            <div class="form-outline form-white mb-4">
+                                <input [(ngModel)]="user.username" #username="ngModel" name="username" class="form-control form-control" placeholder="Usuario" aria-label="Username" required>
+                            </div>
+
+                            <span class="requiredData">
+                                <p *ngIf="!email.valid && email.touched" class="text-start">Campo obligatorio</p>
+                            </span>
+
+                            <div class="form-outline form-white mb-4">
+                                <input [(ngModel)]="user.email" #email="ngModel" name="email" type="email" class="form-control form-control" placeholder="Correo electronico" aria-label="Email" required>
+                            </div>
+
+                            <span class="requiredData">
+                                <p *ngIf="!password.valid && password.touched" class="text-start">Campo obligatorio</p>
+                            </span>
+
+                            <div class="input-group form-outline form-white mb-4">
+                                <input (keyup)="checkPassword()" [(ngModel)]="user.password" #password="ngModel" name="password" type="password" class="form-control form-control" placeholder="Contraseña" aria-label="Password" required>
+                                <input (keyup)="checkPassword()" [(ngModel)]="repeatPass" name="repeatPass" type="password" class="form-control form-control" placeholder="Confimarción" aria-label="RepeatPassword" required>
+                            </div>
+                            <div class="form-outline form-white mb-4">
+                                <input [(ngModel)]="user.phone" name="phone" class="form-control form-control" placeholder="Número telefónico" aria-label="Phone">
+                            </div>
+                            <p>
+                                <input ngModel name="checkboxTerms" class="form-check-input mb-4" type="checkbox" required>
+                                <label class="form-check-label mb-4 ms-2">Aceptar <a href="https://en.wikipedia.org/wiki/Contractual_term" target="_blank" rel="noopener noreferrer">terminos y condiciones</a></label>
+                            </p>
+                            <button [disabled]="!registerForm.form.valid" class="btn btn-outline-light btn-lg px-5" type="submit">Registrarse</button>
+                        </form>
+                    </div>
+
+                    <div>
+                        <p>¿Ya tienes una cuenta? <a routerLink="/login" class="text-white-50 fw-bold">Inicia sesión</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

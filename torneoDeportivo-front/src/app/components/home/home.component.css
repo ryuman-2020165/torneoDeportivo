@@ -1,0 +1,6 @@
+.bgimg {
+  background-image: url('../../../assets/bg-ball.png');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}

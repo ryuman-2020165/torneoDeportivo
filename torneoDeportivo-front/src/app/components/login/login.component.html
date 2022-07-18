@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+
+<div class="container loginForm">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card bg-dark text-white border border-5" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+
+                    <div class="md-5 pb-5">
+
+                        <form #loginForm="ngForm" (ngSubmit)="login()">
+                            <h2 class="fw-bold mb-3">Inicia sesión</h2>
+
+                            <div class="input-group form-outline form-white mb-4">
+                                <input [(ngModel)]="user.username" name="usernmae" type="username" class="form-control form-control" placeholder="Usuario" aria-label="Username" required>
+                                <input [(ngModel)]="user.password" name="password" type="password" class="form-control form-control" placeholder="Contraseña" aria-label="Password" required>
+                            </div>
+
+                            <p><a class="text-white-50" href="#!">¿Olvidaste tu contraseña?</a></p>
+
+                            <button [disabled]="!loginForm.form.valid" class="btn btn-outline-light btn px-5" type="submit">Ingresar</button>
+                        </form>
+
+                    </div>
+
+                    <div>
+                        <p>¿No tienes una cuenta? <a routerLink="/register" class="text-white-50 fw-bold">Registrate ahora</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

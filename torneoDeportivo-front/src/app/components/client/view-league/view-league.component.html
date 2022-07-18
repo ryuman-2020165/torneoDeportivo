@@ -1,0 +1,284 @@
+<app-navbar></app-navbar>
+
+<div class="text-center m-3">
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAddTeam">Agregar equipo</button>
+    <button (click)="getJourneys()" class="btn btn-primary ms-2" data-bs-toggle="modal" href="#modalGetJourneys">Ver jornadas</button>
+    <button (click)="createChart()" class="btn btn-primary ms-2" data-bs-toggle="modal" href="#modalGetChart">Ver gráfica</button>
+    <!-- <div class="input-group mx-auto w-25 mt-2 ">
+        <input [(ngModel)]="search" type="text" class="form-control" placeholder="Buscar producto" aria-describedby="btnSearch">
+    </div> -->
+</div>
+<hr>
+<div class="row justify-content-center px-4">
+    <div *ngFor="let team of teams" class="card m-2" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ team.name }}</h5>
+            <p class="card-subtitle mb-2 text-muted fst-italic"> -{{ team.country }}- </p>
+            <p class="card-subtitle mb-2 fst-italic"> Goles a favor: {{ team.proGoals }} </p>
+            <p class="card-subtitle mb-2 fst-italic"> Goles en contra: {{ team.againstGoals }} </p>
+            <p class="card-subtitle mb-2 fst-italic"> Diferencia de goles: {{ team.differenceGoals }} </p>
+            <p class="card-subtitle mb-2 fst-italic"> Partidos jugados: {{ team.playedMatches }} </p>
+
+            <div class="btn-group d-flex" role="group">
+                <button (click)="getTeam(team._id)" class="btn btn-warning flex-grow-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasGetTeam" aria-controls="offcanvasGetLeague">Editar</button>
+                <button (click)="deleteTeam(team._id)" class="btn btn-danger">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal add team-->
+<div class="modal fade" id="modalAddTeam" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Agregar equipo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form #addTeamForm="ngForm">
+                    <div class="mb-3">
+                        <label class="form-label">Nombre</label>
+                        <input [(ngModel)]="team.name" name="name" type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">País</label>
+                        <input [(ngModel)]="team.country" name="country" type="text" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Descartar cambios</button>
+                        <button type="submit" (click)="addTeam(addTeamForm)" class="btn btn-primary" data-bs-dismiss="modal">Agregar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Offcanvas get team-->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasGetTeam" aria-labelledby="offcanvasGetLeague">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasGetTeam">Editar equipo</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <form (ngSubmit)="updateTeam()" *ngIf="teamGetId">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input [(ngModel)]="teamGetId.name" name="name" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">País</label>
+                <input [(ngModel)]="teamGetId.country" name="country" type="text" class="form-control">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="offcanvas">Descartar cambios</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="offcanvas">Actualizar cambios</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal get journeys-->
+<div class="modal fade" id="modalGetJourneys" tabindex="-1" aria-labelledby="modalGetJourneysLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Jornadas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Jornada</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col" class="d-flex me-5">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let journey of journeys">
+                            <th scope="row">{{ journey.name }}</th>
+                            <td>{{ journey.date }}</td>
+                            <td class="">
+                                <button (click)="getJourney(journey._id)" type="button" class="btn btn-warning me-1" data-bs-toggle="modal" data-bs-target="#modalUpdateJourney">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </button>
+                                <button (click)="getMatches(journey._id)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalGetMatches">
+                                    <i class="bi bi-eye-fill"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal update journeys-->
+<div class="modal fade" id="modalUpdateJourney" tabindex="-1" aria-labelledby="modalUpdateJourneyLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Jornadas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="updateJourney()" *ngIf="journeyGetId">
+                    <div class="mb-3">
+                        <label class="form-label">Nombre</label>
+                        <input [(ngModel)]="journeyGetId.name" name="name" type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Fecha (YYYY-MM-DD) </label>
+                        <input [(ngModel)]="journeyGetId.date" name="country" type="text" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalGetJourneys">Regresar</button>
+                        <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalGetJourneys">Actualizar cambios</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal get matches-->
+<div class="modal fade" id="modalGetMatches" tabindex="-1" aria-labelledby="modalGetMatchesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Partidos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center mb-2">
+                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAddMatch">Agregar partido</button>
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Equipo 1</th>
+                            <th scope="col">Goles</th>
+                            <th scope="col">Equipo 2</th>
+                            <th scope="col">Goles</th>
+                            <th scope="col" class="me-5">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let match of matches">
+                            <td>{{ match.team1.name }}</td>
+                            <td>{{ match.score1 }}</td>
+                            <td>{{ match.team2.name }}</td>
+                            <td>{{ match.score2 }}</td>
+                            <td class="d-flex justify-content-center">
+                                <button (click)="getMatch(match._id)" type="button" class="btn btn-warning me-1" data-bs-toggle="modal" data-bs-target="#modalUpdateMatch">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </button>
+                                <button (click)="deleteMatch(match._id)" type="button" class="btn btn-danger">
+                                    <i class="bi bi-trash-fill"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalGetJourneys">Regresar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal add match-->
+<div class="modal fade" id="modalAddMatch" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Agregar partido</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form #addMatchForm="ngForm">
+                    <div class="mb-3">
+                        <label class="form-label">Equipo 1</label>
+                        <select [(ngModel)]="match.team1" name="team1" class="form-select">
+                            <option *ngFor="let team of teams" value="{{team._id}}">{{ team.name }}</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Goles equipo 1</label>
+                        <input [(ngModel)]="match.score1" name="score1" type="number" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Equipo 2</label>
+                        <select [(ngModel)]="match.team2" name="team2" class="form-select">
+                            <option *ngFor="let team of teams" value="{{team._id}}">{{ team.name }}</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Goles equipo 2</label>
+                        <input [(ngModel)]="match.score2" name="score2" type="number" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalGetMatches">Regresar</button>
+                        <button type="submit" (click)="addMatch(addMatchForm)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalGetMatches">Agregar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal update match-->
+<div class="modal fade" id="modalUpdateMatch" tabindex="-1" aria-labelledby="modalUpdateMatchLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar partido</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="updateMatch()" *ngIf="matchGetId">
+                    <div class="mb-3">
+                        <label class="form-label">Goles del equipo 1</label>
+                        <input [(ngModel)]="matchGetId.score1" name="name" type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Goles del equipo 2</label>
+                        <input [(ngModel)]="matchGetId.score2" name="country" type="text" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalGetMatches">Regresar</button>
+                        <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalGetMatches">Actualizar cambios</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal get chart-->
+<div class="modal fade" id="modalGetChart" tabindex="-1" aria-labelledby="modalGetChartLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Jornadas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div>
+                        <div style="display: block">
+                            <canvas baseChart chartType="bar" 
+                            [labels]="leagueChartLabels" 
+                            [data]="leagueChartData" 
+                            [options]="leagueChartOptions"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

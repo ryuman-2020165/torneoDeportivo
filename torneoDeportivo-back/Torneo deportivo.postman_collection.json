@@ -1,0 +1,2662 @@
+{
+	"info": {
+		"_postman_id": "c904b00b-9ee1-4c90-a3d2-4bc162f6760a",
+		"name": "Torneo deportivo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ADMIN",
+			"item": [
+				{
+					"name": "Usuarios",
+					"item": [
+						{
+							"name": "test",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3200/user/test",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"test"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "register_OnlyAdmin",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjcwYWRkODllOTBmNmNlM2Q2Yzk5YTMiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRaZFlqWWtEcXhRRENSZFBHMmdwMDFlaHVJcDVZNVcwVjhjWDA3Y1hTaTNrTmp4aVozNUQydSIsInBob25lIjoiMTIzIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjUxNTU2MTcyLCJleHAiOjE2NTE1NjMzNzJ9.2uxSQzoDjX2kdl4BPkO_IVK0xhmpTsfjNkKJ7l1akHE",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Josué",
+											"type": "text"
+										},
+										{
+											"key": "surname",
+											"value": "Medina",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "kemonito",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "kemonito@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "kemonito",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "123",
+											"type": "text"
+										},
+										{
+											"key": "role",
+											"value": "ADMIN",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/user/register_OnlyAdmin",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"register_OnlyAdmin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getUsers",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdlYWFmNWNiMDViYjRiMzc5MTk2MTkiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MjQ3MTI1MSwiZXhwIjoxNjUyNTE0NDUxfQ.UtcXeLZdPD5isvgd0hNQWHuUH7EbSuWh93YE61v1KCk",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "localhost:3200/user/getUsers",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"getUsers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getUser",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdlYWFmNWNiMDViYjRiMzc5MTk2MTkiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MjQ3MTI1MSwiZXhwIjoxNjUyNTE0NDUxfQ.UtcXeLZdPD5isvgd0hNQWHuUH7EbSuWh93YE61v1KCk",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "localhost:3200/user/getUser/627ec3ed07f4607503188979",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"getUser",
+										"627ec3ed07f4607503188979"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "serchUser",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjcwYWRkODllOTBmNmNlM2Q2Yzk5YTMiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRaZFlqWWtEcXhRRENSZFBHMmdwMDFlaHVJcDVZNVcwVjhjWDA3Y1hTaTNrTmp4aVozNUQydSIsInBob25lIjoiMTIzIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjUxNTU0OTkyLCJleHAiOjE2NTE1NjIxOTJ9._NLsdi_zaIdx398vTVnsMukP6qzDrITSc5NRfV9J86o",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "kemonito",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/user/searchUser",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"searchUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_OnlyAdmin",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdlYWFmNWNiMDViYjRiMzc5MTk2MTkiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MjQ3MTI1MSwiZXhwIjoxNjUyNTE0NDUxfQ.UtcXeLZdPD5isvgd0hNQWHuUH7EbSuWh93YE61v1KCk",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Josué",
+											"type": "text"
+										},
+										{
+											"key": "surname",
+											"value": "Medina",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "kemonito",
+											"type": "text"
+										},
+										{
+											"key": "role",
+											"value": "CLIENT",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/user/update_OnlyAdmin/627ec802f89d6491ed56985b",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"update_OnlyAdmin",
+										"627ec802f89d6491ed56985b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_OnlyAdmin",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdlYWFmNWNiMDViYjRiMzc5MTk2MTkiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MjQ3MTI1MSwiZXhwIjoxNjUyNTE0NDUxfQ.UtcXeLZdPD5isvgd0hNQWHuUH7EbSuWh93YE61v1KCk",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "localhost:3200/user/delete_OnlyAdmin/627ec802f89d6491ed56985b",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"delete_OnlyAdmin",
+										"627ec802f89d6491ed56985b"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Ligas",
+					"item": [
+						{
+							"name": "testLeague",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjcyY2VjYTM4NjIxZjU2MWViZmE4MWMiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInBhc3N3b3JkIjoiJDJhJDEwJER4cDdpNG0uTUVJV3F1cUpqUklyc3VrcUlPYXhndkNNMS5NQW01RS4yMVhtTkdXY0dHRDlHIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjUxNzI5MjQyLCJleHAiOjE2NTE3MzY0NDJ9.zxWm_3e2GtlyeITiVY8KyDiQ-x6NsBt6Bqkt4vST-PE\"",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "localhost:3200/league/testLeague",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"league",
+										"testLeague"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addLeague_OnlyAdmin",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdlYWFmNWNiMDViYjRiMzc5MTk2MTkiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MjQ3MTI1MSwiZXhwIjoxNjUyNTE0NDUxfQ.UtcXeLZdPD5isvgd0hNQWHuUH7EbSuWh93YE61v1KCk",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "user",
+											"value": "627ee7badffb0ba16cb8600e",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Ligas México 2022",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "México",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/league/addLeague_OnlyAdmin",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"league",
+										"addLeague_OnlyAdmin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getLeagues_OnlyAdmin",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdlYWFmNWNiMDViYjRiMzc5MTk2MTkiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MjQ3MTI1MSwiZXhwIjoxNjUyNTE0NDUxfQ.UtcXeLZdPD5isvgd0hNQWHuUH7EbSuWh93YE61v1KCk",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "localhost:3200/league/getLeagues_OnlyAdmin",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"league",
+										"getLeagues_OnlyAdmin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getLeague_OnlyAdmin",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdlYWFmNWNiMDViYjRiMzc5MTk2MTkiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MjQ3MTI1MSwiZXhwIjoxNjUyNTE0NDUxfQ.UtcXeLZdPD5isvgd0hNQWHuUH7EbSuWh93YE61v1KCk",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "localhost:3200/league/getLeague_OnlyAdmin/627ee762dffb0ba16cb85ff1",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"league",
+										"getLeague_OnlyAdmin",
+										"627ee762dffb0ba16cb85ff1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateLeague_OnlyAdmin",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdlYWFmNWNiMDViYjRiMzc5MTk2MTkiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MjQ3MTI1MSwiZXhwIjoxNjUyNTE0NDUxfQ.UtcXeLZdPD5isvgd0hNQWHuUH7EbSuWh93YE61v1KCk",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/league/updateLeague_OnlyAdmin/627ee762dffb0ba16cb85ff1",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"league",
+										"updateLeague_OnlyAdmin",
+										"627ee762dffb0ba16cb85ff1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteLeague_OnlyAdmin",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdlYWFmNWNiMDViYjRiMzc5MTk2MTkiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MjQ3MTI1MSwiZXhwIjoxNjUyNTE0NDUxfQ.UtcXeLZdPD5isvgd0hNQWHuUH7EbSuWh93YE61v1KCk",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "localhost:3200/league/deleteLeague_OnlyAdmin/627ee762dffb0ba16cb85ff1",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"league",
+										"deleteLeague_OnlyAdmin",
+										"627ee762dffb0ba16cb85ff1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Equipos",
+					"item": [
+						{
+							"name": "testTeam",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjcyYzg0MjRlYzhlZDJlODY3NzViOWYiLCJuYW1lIjoiMSIsInN1cm5hbWUiOiIxIiwidXNlcm5hbWUiOiIxIiwiZW1haWwiOiIxQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJFZjNGFYbU5sd2JsbGhuMldtaGVTUmVZYkcweGJtdGQyVy9lSEpYcW4zRFRsdFEyQkNyNEV1IiwicGhvbmUiOiIxMjMiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNjUxNjg5NTUyLCJleHAiOjE2NTE2OTY3NTJ9.JgfcVwQy3usS_IW-cVf5qmSeIDVBBl1B5jT2lZOkWQk\"",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "localhost:3200/team/testTeam",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"team",
+										"testTeam"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addTeam_OnlyAdmin",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3NDIwNGE1OTllYmQxYjVjMGMzYTMiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInBhc3N3b3JkIjoiJDJhJDEwJFluUjNQSDYvY01nay9xdXoxb2dNeWVTaTY1cUxQVTZVZVFONVhNYzRnL0dOQkZmMDRjdW02Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjUxOTg4MjM3LCJleHAiOjE2NTIwMzE0Mzd9.iqdz4hHUF7KguzanRe8ovnjzm1kIqxaaIJLr0GpbGJY\"",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Equipo 3",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "México",
+											"type": "text"
+										},
+										{
+											"key": "league",
+											"value": "62777238f9838dcf15ddc5bd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/team/addTeam_OnlyAdmin",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"team",
+										"addTeam_OnlyAdmin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getTeam_OnlyAdmin",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3NDIwNGE1OTllYmQxYjVjMGMzYTMiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInBhc3N3b3JkIjoiJDJhJDEwJFluUjNQSDYvY01nay9xdXoxb2dNeWVTaTY1cUxQVTZVZVFONVhNYzRnL0dOQkZmMDRjdW02Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjUxOTg4MjM3LCJleHAiOjE2NTIwMzE0Mzd9.iqdz4hHUF7KguzanRe8ovnjzm1kIqxaaIJLr0GpbGJY\"",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "league",
+											"value": "627742a8a599ebd1b5c0c3ac",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/team/getTeam_OnlyAdmin/627742c3a599ebd1b5c0c3af",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"team",
+										"getTeam_OnlyAdmin",
+										"627742c3a599ebd1b5c0c3af"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getTeams_OnlyAdmin",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3NDIwNGE1OTllYmQxYjVjMGMzYTMiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInBhc3N3b3JkIjoiJDJhJDEwJFluUjNQSDYvY01nay9xdXoxb2dNeWVTaTY1cUxQVTZVZVFONVhNYzRnL0dOQkZmMDRjdW02Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjUxOTg4MjM3LCJleHAiOjE2NTIwMzE0Mzd9.iqdz4hHUF7KguzanRe8ovnjzm1kIqxaaIJLr0GpbGJY\"",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "league",
+											"value": "6277426ea599ebd1b5c0c3aa",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/team/getTeams_OnlyAdmin",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"team",
+										"getTeams_OnlyAdmin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateTeam_OnlyAdmin",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3NDIwNGE1OTllYmQxYjVjMGMzYTMiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInBhc3N3b3JkIjoiJDJhJDEwJFluUjNQSDYvY01nay9xdXoxb2dNeWVTaTY1cUxQVTZVZVFONVhNYzRnL0dOQkZmMDRjdW02Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjUxOTg4MjM3LCJleHAiOjE2NTIwMzE0Mzd9.iqdz4hHUF7KguzanRe8ovnjzm1kIqxaaIJLr0GpbGJY\"",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Marquense",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "Guatemala",
+											"type": "text"
+										},
+										{
+											"key": "league",
+											"value": "6277426ea599ebd1b5c0c3aa",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/team/updateTeam_OnlyAdmin/6277575f16260d9a07978178",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"team",
+										"updateTeam_OnlyAdmin",
+										"6277575f16260d9a07978178"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteTeam_OnlyAdmin",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3NDIwNGE1OTllYmQxYjVjMGMzYTMiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInBhc3N3b3JkIjoiJDJhJDEwJFluUjNQSDYvY01nay9xdXoxb2dNeWVTaTY1cUxQVTZVZVFONVhNYzRnL0dOQkZmMDRjdW02Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjUxOTg4MjM3LCJleHAiOjE2NTIwMzE0Mzd9.iqdz4hHUF7KguzanRe8ovnjzm1kIqxaaIJLr0GpbGJY\"",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "league",
+											"value": "62777231f9838dcf15ddc5bb",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/team/deleteTeam_OnlyAdmin/6277724df9838dcf15ddc5c0",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"team",
+										"deleteTeam_OnlyAdmin",
+										"6277724df9838dcf15ddc5c0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createChart_OnlyAdmin",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3Nzc4OGU0Zjg5YjM3NWY2ZTEzMjEiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRwMDI1aE9ubC9ic1RkWnlsWlBtd2hPU3JNOFVyc21KTVhoQk82TjlUckVsR2xtRFAvZnVnZSIsInBob25lIjoiMTIzIiwicm9sZSI6IkNMSUVOVCIsImlhdCI6MTY1MTk5NjU2NywiZXhwIjoxNjUyMDM5NzY3fQ.Hn1XxBmNUVih_B6AFANGzgp3KgGfk5JxaQl6evWKNvA",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "league",
+											"value": "6277781470953dff0328afc8",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/team/createChart_OnlyAdmin",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"team",
+										"createChart_OnlyAdmin"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Jornadas",
+					"item": [
+						{
+							"name": "Partidos",
+							"item": [
+								{
+									"name": "addMatch_OnlyAdmin",
+									"request": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "value",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3NzdlODcwOTUzZGZmMDMyOGFmYzUiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInBhc3N3b3JkIjoiJDJhJDEwJHl0VDZtQ0s1M210emZFaEN1d3FFOHVoNk4yeWt3T1llZFdxc1ZuaDBzc09wazFNV1QyRDg2Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjUxOTk2NjU1LCJleHAiOjE2NTIwMzk4NTV9.8ordmvJDz5hp3mX2h-nKth6VCK2erTdZP4mjEWcdMko",
+													"type": "string"
+												},
+												{
+													"key": "key",
+													"value": "Authorization",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "league",
+													"value": "6277781470953dff0328afc8",
+													"type": "text"
+												},
+												{
+													"key": "team1",
+													"value": "627778a070953dff0328afcd",
+													"type": "text"
+												},
+												{
+													"key": "score1",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "team2",
+													"value": "627778aa70953dff0328afdd",
+													"type": "text"
+												},
+												{
+													"key": "score2",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/journey/addMatch_OnlyAdmin/627778a970953dff0328afd6",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"journey",
+												"addMatch_OnlyAdmin",
+												"627778a970953dff0328afd6"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getMatch_OnlyAdmin",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "value",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3NzdlODcwOTUzZGZmMDMyOGFmYzUiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInBhc3N3b3JkIjoiJDJhJDEwJHl0VDZtQ0s1M210emZFaEN1d3FFOHVoNk4yeWt3T1llZFdxc1ZuaDBzc09wazFNV1QyRDg2Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjUxOTk2NjU1LCJleHAiOjE2NTIwMzk4NTV9.8ordmvJDz5hp3mX2h-nKth6VCK2erTdZP4mjEWcdMko",
+													"type": "string"
+												},
+												{
+													"key": "key",
+													"value": "Authorization",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "league",
+													"value": "6277781470953dff0328afc8",
+													"type": "text"
+												},
+												{
+													"key": "journey",
+													"value": "627778a970953dff0328afd6",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/journey/getMatch_OnlyAdmin/627778ef70953dff0328b007",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"journey",
+												"getMatch_OnlyAdmin",
+												"627778ef70953dff0328b007"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getMatches_OnlyAdmin",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "value",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3NzdlODcwOTUzZGZmMDMyOGFmYzUiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInBhc3N3b3JkIjoiJDJhJDEwJHl0VDZtQ0s1M210emZFaEN1d3FFOHVoNk4yeWt3T1llZFdxc1ZuaDBzc09wazFNV1QyRDg2Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjUxOTk2NjU1LCJleHAiOjE2NTIwMzk4NTV9.8ordmvJDz5hp3mX2h-nKth6VCK2erTdZP4mjEWcdMko",
+													"type": "string"
+												},
+												{
+													"key": "key",
+													"value": "Authorization",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "league",
+													"value": "6277781470953dff0328afc8",
+													"type": "text"
+												},
+												{
+													"key": "journey",
+													"value": "627778a970953dff0328afd6",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/journey/getMatches_OnlyAdmin",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"journey",
+												"getMatches_OnlyAdmin"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "updateMatch_OnlyAdmin",
+									"request": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "value",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3NzdlODcwOTUzZGZmMDMyOGFmYzUiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInBhc3N3b3JkIjoiJDJhJDEwJHl0VDZtQ0s1M210emZFaEN1d3FFOHVoNk4yeWt3T1llZFdxc1ZuaDBzc09wazFNV1QyRDg2Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjUxOTk2NjU1LCJleHAiOjE2NTIwMzk4NTV9.8ordmvJDz5hp3mX2h-nKth6VCK2erTdZP4mjEWcdMko",
+													"type": "string"
+												},
+												{
+													"key": "key",
+													"value": "Authorization",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "league",
+													"value": "6277781470953dff0328afc8",
+													"type": "text"
+												},
+												{
+													"key": "journey",
+													"value": "627778a970953dff0328afd6",
+													"type": "text"
+												},
+												{
+													"key": "score1",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "score2",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/journey/updateMatch_OnlyAdmin/6277d36d73baf61c9eb23328",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"journey",
+												"updateMatch_OnlyAdmin",
+												"6277d36d73baf61c9eb23328"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "deleteMatch_OnlyAdmin",
+									"request": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "value",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3NzdlODcwOTUzZGZmMDMyOGFmYzUiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInBhc3N3b3JkIjoiJDJhJDEwJHl0VDZtQ0s1M210emZFaEN1d3FFOHVoNk4yeWt3T1llZFdxc1ZuaDBzc09wazFNV1QyRDg2Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjUxOTk2NjU1LCJleHAiOjE2NTIwMzk4NTV9.8ordmvJDz5hp3mX2h-nKth6VCK2erTdZP4mjEWcdMko",
+													"type": "string"
+												},
+												{
+													"key": "key",
+													"value": "Authorization",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "league",
+													"value": "6277781470953dff0328afc8",
+													"type": "text"
+												},
+												{
+													"key": "journey",
+													"value": "627778a970953dff0328afd6",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/journey/deleteMatch_OnlyAdmin/6277d36d73baf61c9eb23328",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"journey",
+												"deleteMatch_OnlyAdmin",
+												"6277d36d73baf61c9eb23328"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "testJourney",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjczNzY5YjdiZDRmODA5NjhjZDgyYWYiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInBhc3N3b3JkIjoiJDJhJDEwJFgwMGpBY1pjRFp6MGxEWHp4c0s1WE95UmRVZXhrRnNZbjg5R2hPbzUwVXdTM0hUMHFuUGlPIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjUxOTY2NTEzLCJleHAiOjE2NTIwMDk3MTN9.Mg_QoHxCErUm31VT2_zRUA1GXkO4V3GrNYvVbJtfEUE\"",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3200/journey/testJourney",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"journey",
+										"testJourney"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getJourney_OnlyAdmin",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3NzdlODcwOTUzZGZmMDMyOGFmYzUiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInBhc3N3b3JkIjoiJDJhJDEwJHl0VDZtQ0s1M210emZFaEN1d3FFOHVoNk4yeWt3T1llZFdxc1ZuaDBzc09wazFNV1QyRDg2Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjUxOTk2NjU1LCJleHAiOjE2NTIwMzk4NTV9.8ordmvJDz5hp3mX2h-nKth6VCK2erTdZP4mjEWcdMko",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "league",
+											"value": "6277781470953dff0328afc8",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/journey/getJourney_OnlyAdmin/627778a970953dff0328afd6",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"journey",
+										"getJourney_OnlyAdmin",
+										"627778a970953dff0328afd6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getJourneys_OnlyAdmin",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3NzdlODcwOTUzZGZmMDMyOGFmYzUiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInBhc3N3b3JkIjoiJDJhJDEwJHl0VDZtQ0s1M210emZFaEN1d3FFOHVoNk4yeWt3T1llZFdxc1ZuaDBzc09wazFNV1QyRDg2Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjUxOTk2NjU1LCJleHAiOjE2NTIwMzk4NTV9.8ordmvJDz5hp3mX2h-nKth6VCK2erTdZP4mjEWcdMko",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "league",
+											"value": "6277781470953dff0328afc8",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/journey/getJourneys_OnlyAdmin",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"journey",
+										"getJourneys_OnlyAdmin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateJourney_OnlyAdmin",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3NzdlODcwOTUzZGZmMDMyOGFmYzUiLCJuYW1lIjoiQURNSU4iLCJzdXJuYW1lIjoiQURNSU4iLCJ1c2VybmFtZSI6IkFETUlOIiwiZW1haWwiOiJBRE1JTiIsInBhc3N3b3JkIjoiJDJhJDEwJHl0VDZtQ0s1M210emZFaEN1d3FFOHVoNk4yeWt3T1llZFdxc1ZuaDBzc09wazFNV1QyRDg2Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNjUxOTk2NjU1LCJleHAiOjE2NTIwMzk4NTV9.8ordmvJDz5hp3mX2h-nKth6VCK2erTdZP4mjEWcdMko",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "league",
+											"value": "6277781470953dff0328afc8",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Jornada 2",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "2022-05-08",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/journey/updateJourney_OnlyAdmin/627778aa70953dff0328afe0",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"journey",
+										"updateJourney_OnlyAdmin",
+										"627778aa70953dff0328afe0"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ALL ROLES",
+			"item": [
+				{
+					"name": "Usuarios",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "ADMIN",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "deportes123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/user/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Osmar",
+											"type": "text"
+										},
+										{
+											"key": "surname",
+											"value": "Ortíz",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "oortiz",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "oortiz@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "oortiz",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/user/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "myProfile",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdhYjc5ZDRmMjhkNTZiYTgwNTliMmEiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBraW5hbC5lZHUuZ3QiLCJwaG9uZSI6Im9vcnRpeiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTI0NTczNTgsImV4cCI6MTY1MjUwMDU1OH0.Y5EdHyZXnf8NG0FITcaSGB2DO_Eziac0F04jDtdtHIQ",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "localhost:3200/user/myProfile",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"myProfile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdhYjc5ZDRmMjhkNTZiYTgwNTliMmEiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBraW5hbC5lZHUuZ3QiLCJwaG9uZSI6Im9vcnRpeiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTI0NTczNTgsImV4cCI6MTY1MjUwMDU1OH0.Y5EdHyZXnf8NG0FITcaSGB2DO_Eziac0F04jDtdtHIQ",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Osmar",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "surname",
+											"value": "Ortíz",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "username",
+											"value": "oortiz",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "phone",
+											"value": "123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/user/update",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteUser",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjcwYjgyZWMxNTg0N2FlOWQ4NjZlNTIiLCJuYW1lIjoiSm9zdcOpIiwic3VybmFtZSI6Ik1lZGluYSIsInVzZXJuYW1lIjoia2Vtb25pdG8iLCJlbWFpbCI6ImtlbW9uaXRvQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJEVFMzNiR3ZTMmV3Mk1rYTRpcXAuei51RXFJM0JXanNCTnJQMVRHQjRMRkZjalF2VzJtRmJtIiwicGhvbmUiOiIxMjMiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNjUxNTU1MjIwLCJleHAiOjE2NTE1NjI0MjB9.88Y2GSevOjO8EsOcJ4IlvpZ5dWZvdvUji5DFG4-SVvk",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "localhost:3200/user/delete",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"user",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Ligas",
+					"item": [
+						{
+							"name": "addLeague",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3Nzc4OGU0Zjg5YjM3NWY2ZTEzMjEiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRwMDI1aE9ubC9ic1RkWnlsWlBtd2hPU3JNOFVyc21KTVhoQk82TjlUckVsR2xtRFAvZnVnZSIsInBob25lIjoiMTIzIiwicm9sZSI6IkNMSUVOVCIsImlhdCI6MTY1MTk5NjU2NywiZXhwIjoxNjUyMDM5NzY3fQ.Hn1XxBmNUVih_B6AFANGzgp3KgGfk5JxaQl6evWKNvA",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Ligas México 2022",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "México",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/league/addLeague",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"league",
+										"addLeague"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getLeague",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc1NTg0Yzc1MzllMmQwMWZhYWYyYzMiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCQzM2JyUTVxcmlkOEhSNzNyVVhyd3hPWmRHd3kyb0pnZU9OM3ljaEMuUkE5VUJRZE5sbkJZdSIsInBob25lIjoiMTIzIiwicm9sZSI6IkNMSUVOVCIsImlhdCI6MTY1MTk2MTk4MSwiZXhwIjoxNjUxOTY5MTgxfQ.eotVBnAUIjtNyD9gVCCaLnXuvx6ynPvGVB0MmVvT6nA\"",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "localhost:3200/league/getLeague/6276f111738a1cf9de40301e",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"league",
+										"getLeague",
+										"6276f111738a1cf9de40301e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getLeagues",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3Nzc4OGU0Zjg5YjM3NWY2ZTEzMjEiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBnbWFpbC5jb20iLCJwaG9uZSI6IjEyMyIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTIxOTY0NzYsImV4cCI6MTY1MjIzOTY3Nn0.Dp-xAUVeV-fp5CfwL7oxtXH2M-qRityOceWte0AQDuI",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "localhost:3200/league/getLeagues",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"league",
+										"getLeagues"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateLeague",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc1NWM3ZTM3ZThmNTBkNjM5OWM0MDYiLCJuYW1lIjoiRW1pbGlvIiwic3VybmFtZSI6ImRlIExlw7NuIiwidXNlcm5hbWUiOiJlZGVsZW9uIiwiZW1haWwiOiJlZGVsZW9uQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJDZ3UDZtRmZKSktQVWtuc1Fjb05pdnV6RW1UblRram9ZbmdBa3o2eTJnemgwbU9DelJJQkg2IiwicGhvbmUiOiIxMjMiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNjUxOTYyMDM5LCJleHAiOjE2NTE5NjkyMzl9.cGcNNBbX0zcqTD63VDyb-PlbxrI4kNyqLMXawW5VoDY",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Ligas Colombia 2022",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "Colombia",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/league/updateLeague/6276f11a738a1cf9de403020",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"league",
+										"updateLeague",
+										"6276f11a738a1cf9de403020"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteLeague",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc1NWM3ZTM3ZThmNTBkNjM5OWM0MDYiLCJuYW1lIjoiRW1pbGlvIiwic3VybmFtZSI6ImRlIExlw7NuIiwidXNlcm5hbWUiOiJlZGVsZW9uIiwiZW1haWwiOiJlZGVsZW9uQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJDZ3UDZtRmZKSktQVWtuc1Fjb05pdnV6RW1UblRram9ZbmdBa3o2eTJnemgwbU9DelJJQkg2IiwicGhvbmUiOiIxMjMiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNjUxODU4NjMxLCJleHAiOjE2NTE4NjU4MzF9.F9uM8LQXPeX6y7_0FPtQG7HAS7jZHWfyh4-O_RcpfwM",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "localhost:3200/league/deleteLeague/627559857539e2d01faaf2ec",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"league",
+										"deleteLeague",
+										"627559857539e2d01faaf2ec"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Equipos",
+					"item": [
+						{
+							"name": "addTeam",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3Nzc4OGU0Zjg5YjM3NWY2ZTEzMjEiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBnbWFpbC5jb20iLCJwaG9uZSI6IjEyMyIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTIxOTY0NzYsImV4cCI6MTY1MjIzOTY3Nn0.Dp-xAUVeV-fp5CfwL7oxtXH2M-qRityOceWte0AQDuI",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Equipo 4",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "México",
+											"type": "text"
+										},
+										{
+											"key": "league",
+											"value": "6279a1017644424e1ddb5441",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/team/addTeam/6279a1017644424e1ddb5441",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"team",
+										"addTeam",
+										"6279a1017644424e1ddb5441"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getTeam",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3Nzc4OGU0Zjg5YjM3NWY2ZTEzMjEiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBnbWFpbC5jb20iLCJwaG9uZSI6IjEyMyIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTIxOTY0NzYsImV4cCI6MTY1MjIzOTY3Nn0.Dp-xAUVeV-fp5CfwL7oxtXH2M-qRityOceWte0AQDuI",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "league",
+											"value": "6276f111738a1cf9de40301e",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/team/getTeam/6279a1017644424e1ddb5441/6279b8120d85e0f42bc00d61",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"team",
+										"getTeam",
+										"6279a1017644424e1ddb5441",
+										"6279b8120d85e0f42bc00d61"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getTeams",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3Nzc4OGU0Zjg5YjM3NWY2ZTEzMjEiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBnbWFpbC5jb20iLCJwaG9uZSI6IjEyMyIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTIxOTY0NzYsImV4cCI6MTY1MjIzOTY3Nn0.Dp-xAUVeV-fp5CfwL7oxtXH2M-qRityOceWte0AQDuI",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "league",
+											"value": "6279a1017644424e1ddb5441",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/team/getTeams/6279a1017644424e1ddb5441",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"team",
+										"getTeams",
+										"6279a1017644424e1ddb5441"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateTeam",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2Mjc3Nzc4OGU0Zjg5YjM3NWY2ZTEzMjEiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBnbWFpbC5jb20iLCJwaG9uZSI6IjEyMyIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTIxOTY0NzYsImV4cCI6MTY1MjIzOTY3Nn0.Dp-xAUVeV-fp5CfwL7oxtXH2M-qRityOceWte0AQDuI",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Rojos",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "Guatemala",
+											"type": "text"
+										},
+										{
+											"key": "league",
+											"value": "6277426ea599ebd1b5c0c3aa",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/team/updateTeam/6279a1017644424e1ddb5441/6279b8070d85e0f42bc00d51",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"team",
+										"updateTeam",
+										"6279a1017644424e1ddb5441",
+										"6279b8070d85e0f42bc00d51"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteTeam",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdhYjc5ZDRmMjhkNTZiYTgwNTliMmEiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBraW5hbC5lZHUuZ3QiLCJwaG9uZSI6Im9vcnRpeiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTIyMTAwNjMsImV4cCI6MTY1MjI1MzI2M30.misFsUS69KPbjSybxBbGd7c6iXDr9ZV0r4EWFs6xAdI",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "league",
+											"value": "627742a8a599ebd1b5c0c3ac",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/team/deleteTeam/627ab7c54f28d56ba8059b2e/627ab9604f28d56ba8059b5f",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"team",
+										"deleteTeam",
+										"627ab7c54f28d56ba8059b2e",
+										"627ab9604f28d56ba8059b5f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createChart",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdhYjc5ZDRmMjhkNTZiYTgwNTliMmEiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBraW5hbC5lZHUuZ3QiLCJwaG9uZSI6Im9vcnRpeiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTIzODM0NzYsImV4cCI6MTY1MjQyNjY3Nn0.xMW48DkhpORnt8Xp6q3P33ceICRoEs7a08ClnypP0tw",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "league",
+											"value": "6277781470953dff0328afc8",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/team/createChart/627ab7c54f28d56ba8059b2e",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"team",
+										"createChart",
+										"627ab7c54f28d56ba8059b2e"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Jornadas",
+					"item": [
+						{
+							"name": "Partidos",
+							"item": [
+								{
+									"name": "addMatch",
+									"request": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "value",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdhYjc5ZDRmMjhkNTZiYTgwNTliMmEiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBraW5hbC5lZHUuZ3QiLCJwaG9uZSI6Im9vcnRpeiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTIzMjI5MzMsImV4cCI6MTY1MjM2NjEzM30.jgu1Z-l_XUWrojwg7QaQfQDFy4M9DNSsXsXlu6A1X90",
+													"type": "string"
+												},
+												{
+													"key": "key",
+													"value": "Authorization",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "league",
+													"value": "6277781470953dff0328afc8",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "team1",
+													"value": "627ac1b1a6706ad248b6194c",
+													"type": "text"
+												},
+												{
+													"key": "score1",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "team2",
+													"value": "627ab9554f28d56ba8059b54",
+													"type": "text"
+												},
+												{
+													"key": "score2",
+													"value": "3",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/journey/addMatch/627ab7c54f28d56ba8059b2e/627ac1b1a6706ad248b6194f",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"journey",
+												"addMatch",
+												"627ab7c54f28d56ba8059b2e",
+												"627ac1b1a6706ad248b6194f"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getMatch",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "value",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdhYjc5ZDRmMjhkNTZiYTgwNTliMmEiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBraW5hbC5lZHUuZ3QiLCJwaG9uZSI6Im9vcnRpeiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTIzODM0NzYsImV4cCI6MTY1MjQyNjY3Nn0.xMW48DkhpORnt8Xp6q3P33ceICRoEs7a08ClnypP0tw",
+													"type": "string"
+												},
+												{
+													"key": "key",
+													"value": "Authorization",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "league",
+													"value": "6277781470953dff0328afc8",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "journey",
+													"value": "627778a970953dff0328afd6",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/journey/getMatch/627ab7c54f28d56ba8059b2e/627ab94e4f28d56ba8059b4b/627c72ebfe2b885f28bec28d",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"journey",
+												"getMatch",
+												"627ab7c54f28d56ba8059b2e",
+												"627ab94e4f28d56ba8059b4b",
+												"627c72ebfe2b885f28bec28d"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getMatches",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "value",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdhYjc5ZDRmMjhkNTZiYTgwNTliMmEiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBraW5hbC5lZHUuZ3QiLCJwaG9uZSI6Im9vcnRpeiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTIzMjI5MzMsImV4cCI6MTY1MjM2NjEzM30.jgu1Z-l_XUWrojwg7QaQfQDFy4M9DNSsXsXlu6A1X90",
+													"type": "string"
+												},
+												{
+													"key": "key",
+													"value": "Authorization",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "league",
+													"value": "6277781470953dff0328afc8",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "journey",
+													"value": "627778bb70953dff0328aff9",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/journey/getMatches/627ab7c54f28d56ba8059b2e/627ab94e4f28d56ba8059b4b",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"journey",
+												"getMatches",
+												"627ab7c54f28d56ba8059b2e",
+												"627ab94e4f28d56ba8059b4b"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "updateMatch",
+									"request": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "value",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdhYjc5ZDRmMjhkNTZiYTgwNTliMmEiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBraW5hbC5lZHUuZ3QiLCJwaG9uZSI6Im9vcnRpeiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTIzODM0NzYsImV4cCI6MTY1MjQyNjY3Nn0.xMW48DkhpORnt8Xp6q3P33ceICRoEs7a08ClnypP0tw",
+													"type": "string"
+												},
+												{
+													"key": "key",
+													"value": "Authorization",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "league",
+													"value": "6277426ea599ebd1b5c0c3aa",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "journey",
+													"value": "627742d3a599ebd1b5c0c3b8",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "score1",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "score2",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/journey/updateMatch/627ab7c54f28d56ba8059b2e/627ab94e4f28d56ba8059b4b/627c72ebfe2b885f28bec28d",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"journey",
+												"updateMatch",
+												"627ab7c54f28d56ba8059b2e",
+												"627ab94e4f28d56ba8059b4b",
+												"627c72ebfe2b885f28bec28d"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "deleteMatch",
+									"request": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "value",
+													"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdhYjc5ZDRmMjhkNTZiYTgwNTliMmEiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBraW5hbC5lZHUuZ3QiLCJwaG9uZSI6Im9vcnRpeiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTIzODM0NzYsImV4cCI6MTY1MjQyNjY3Nn0.xMW48DkhpORnt8Xp6q3P33ceICRoEs7a08ClnypP0tw",
+													"type": "string"
+												},
+												{
+													"key": "key",
+													"value": "Authorization",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "league",
+													"value": "627742a8a599ebd1b5c0c3ac",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "journey",
+													"value": "627742d3a599ebd1b5c0c3b8",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:3200/journey/deleteMatch/627ab7c54f28d56ba8059b2e/627ab94e4f28d56ba8059b4b/627d4ce206f1a5eb2dfae26d",
+											"host": [
+												"localhost"
+											],
+											"port": "3200",
+											"path": [
+												"journey",
+												"deleteMatch",
+												"627ab7c54f28d56ba8059b2e",
+												"627ab94e4f28d56ba8059b4b",
+												"627d4ce206f1a5eb2dfae26d"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "getJourney",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdhYjc5ZDRmMjhkNTZiYTgwNTliMmEiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBraW5hbC5lZHUuZ3QiLCJwaG9uZSI6Im9vcnRpeiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTIyMTAwNjMsImV4cCI6MTY1MjI1MzI2M30.misFsUS69KPbjSybxBbGd7c6iXDr9ZV0r4EWFs6xAdI",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "league",
+											"value": "6276f11a738a1cf9de403020",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/journey/getJourney/627ab7c54f28d56ba8059b2e/627ab94e4f28d56ba8059b4b",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"journey",
+										"getJourney",
+										"627ab7c54f28d56ba8059b2e",
+										"627ab94e4f28d56ba8059b4b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getJourneys",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdhYjc5ZDRmMjhkNTZiYTgwNTliMmEiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBraW5hbC5lZHUuZ3QiLCJwaG9uZSI6Im9vcnRpeiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTIyMTAwNjMsImV4cCI6MTY1MjI1MzI2M30.misFsUS69KPbjSybxBbGd7c6iXDr9ZV0r4EWFs6xAdI",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "league",
+											"value": "6276f11a738a1cf9de403020",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/journey/getJourneys/627ab7c54f28d56ba8059b2e",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"journey",
+										"getJourneys",
+										"627ab7c54f28d56ba8059b2e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateJourney",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjdhYjc5ZDRmMjhkNTZiYTgwNTliMmEiLCJuYW1lIjoiT3NtYXIiLCJzdXJuYW1lIjoiT3J0w616IiwidXNlcm5hbWUiOiJvb3J0aXoiLCJlbWFpbCI6Im9vcnRpekBraW5hbC5lZHUuZ3QiLCJwaG9uZSI6Im9vcnRpeiIsInJvbGUiOiJDTElFTlQiLCJpYXQiOjE2NTIyMTAwNjMsImV4cCI6MTY1MjI1MzI2M30.misFsUS69KPbjSybxBbGd7c6iXDr9ZV0r4EWFs6xAdI",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "league",
+											"value": "6276f0fd738a1cf9de40301c",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "Jornada 1",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "2022-05-10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3200/journey/updateJourney/627ab7c54f28d56ba8059b2e/627ab94e4f28d56ba8059b4b",
+									"host": [
+										"localhost"
+									],
+									"port": "3200",
+									"path": [
+										"journey",
+										"updateJourney",
+										"627ab7c54f28d56ba8059b2e",
+										"627ab94e4f28d56ba8059b4b"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
